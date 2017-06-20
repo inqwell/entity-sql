@@ -35,7 +35,7 @@
              :Freezable "N"})
 
 (def pineapple {:Fruit       "Pineapple"
-                :Description "Edibe Bromeliad"
+                :Description "Edible Bromeliad"
                 :ShelfLife   18
                 :Active      0    ; Out of season
                 :Freezable   "N"})
@@ -67,15 +67,16 @@
 (defn create-test-table []
   (sql/db-do-commands
     conn
-    "DROP TABLE Fruits IF EXISTS;"
-    (sql/create-table-ddl
-      :Fruit
-      [[:Fruit "VARCHAR(32)" "PRIMARY KEY"]
-       [:Description "VARCHAR(32)"]
-       [:ShelfLife :int]
-       [:Active :int]
-       [:Freezable "CHAR(1)"]]
-      {:table-spec ""})))
+    false
+    ["DROP TABLE Fruit IF EXISTS;"
+     (sql/create-table-ddl
+       :Fruit
+       [[:Fruit "VARCHAR(32)" "PRIMARY KEY"]
+        [:Description "VARCHAR(32)"]
+        [:ShelfLife :int]
+        [:Active :int]
+        [:Freezable "CHAR(1)"]]
+       {:table-spec ""})]))
 
 (use-fixtures
   :once

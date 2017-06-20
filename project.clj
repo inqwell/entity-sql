@@ -1,4 +1,4 @@
-(defproject entity/entity-sql "0.1.0-SNAPSHOT"
+(defproject entity/entity-sql "0.1.1-SNAPSHOT"
   :description "SQL persistence for use with entity-core"
   :url "https://github.com/inqwell/entity-sql"
   :license {:name "Eclipse Public License"

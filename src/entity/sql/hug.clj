@@ -15,7 +15,7 @@
   The resulting function  takes two arguments
    - db-spec
    - any map that provides the necessary SQL parameter values"
-  [fkey f fns select-stmt entity-opts hug-opts jdbc-opts]
+  [fkey f meta fns select-stmt entity-opts hug-opts jdbc-opts]
   (let [date-cols-k (->> fkey
                          name
                          (str "date-cols-")
@@ -28,13 +28,17 @@
                         eval))]
 
     (fn [db-spec key-val]
-      (f db-spec
-         (merge key-val
-                {:select-stmt select-stmt}
-                date-cols
-                entity-opts)
-         hug-opts
-         jdbc-opts))))
+      (let [result (f db-spec
+                      (merge key-val
+                             {:select-stmt select-stmt}
+                             date-cols
+                             entity-opts)
+                      hug-opts
+                      jdbc-opts)
+            res-type (:result meta)]
+        (if (#{:1 :one} res-type)
+          (if (map? result) result nil)
+          result)))))
 
 (defn make-sql-fns
   "Process a SQL file turning its functions into ready-made queries. The
@@ -64,6 +68,7 @@
                    (assoc m k (make-fn
                                 k
                                 (:fn v)
+                                (:meta v)
                                 fns
                                 select-stmt
                                 entity-opts
