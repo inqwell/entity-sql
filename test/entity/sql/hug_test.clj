@@ -3,8 +3,7 @@
   (:require [clojure.test :refer :all]
             [entity.sql.hug :refer :all]
             [clojure.java.jdbc :as sql]
-            [clojure.java.io :as io])
-  (:import [entity.sql.hug SqlIO]))
+            [clojure.java.io :as io]))
 
 (defonce ^:dynamic conn
          {:connection-uri "jdbc:h2:./test.db"

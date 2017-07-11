@@ -1,5 +1,5 @@
 (ns entity.sql.hug
-  (:require [entity.core :refer [IO read-key]]
+  (:require [entity.protocol :refer [IO read-key]]
             [hugsql.core :as hugsql]
             [hikari-cp.core :refer [datasource-config]]
             [clojure.string :as s]
@@ -121,9 +121,9 @@
   (read-key [_ key-name key-val]
     (if-let [f (fns key-name)]
       (f key-val)
-      (throw (ex-info "Unknown read key" {:key-name key-name
-                                          :key-val  key-val
-                                          :key-meta (meta key-val)}))))
+      (throw (ex-info "Unknown SQL read key" {:key-name key-name
+                                              :key-val  key-val
+                                              :key-meta (meta key-val)}))))
 
   ;TODO: consider a dynamic var to enable checking fields conform with proto
   (write-val [_ entity-val]
