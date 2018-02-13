@@ -1,3 +1,21 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
+
+- [entity-sql](#entity-sql)
+    - [Basics](#basics)
+    - [SQL and Keys](#sql-and-keys)
+        - [Select Statement](#select-statement)
+        - [Primary Key](#primary-key)
+        - [Other Keys](#other-keys)
+        - [Support for Multiple Vendors](#support-for-multiple-vendors)
+        - [Updating](#updating)
+        - [Deletion](#deletion)
+    - [Making Connections](#making-connections)
+    - [Usage](#usage)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # entity-sql
 
 Provides SQL persistence for entities defined with [`entity-core`](https://github.com/inqwell/entity-core)
