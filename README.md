@@ -8,7 +8,7 @@ Documentation can be found [here](https://inqwell.github.io/entity-sql/index.htm
 
 ## Usage
 
-`[entity/entity-sql "0.1.1"]`
+`[entity/entity-sql "0.1.2"]`
 
 ## License
 
