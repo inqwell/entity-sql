@@ -8,7 +8,7 @@
                  [org.clojure/java.jdbc "0.7.5"]
                  [com.layerware/hugsql "0.4.8"]
                  [hikari-cp "1.8.3"]]
-  :plugins [[lein-codox "0.10.3"]]
+  :plugins [[lein-codox "0.10.7"]]
   :codox {:exclude-vars #"trail-.*|trunc-.*|^(map)?->\p{Upper}"
           :output-path "codox/entity-sql"
           :source-uri "https://github.com/inqwell/entity-sql/blob/master/{filepath}#L{line}"}

@@ -194,7 +194,5 @@ connection pool.
 
 ## Usage
 
-Not presently hosted. Use `lein install` to place in your local maven
-repo for now and use the version found in `project.clj` for your
-dependency.
+`[entity/entity-sql "0.1.2"]`
 
